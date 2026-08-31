@@ -77,7 +77,6 @@ export default function PredictTab() {
       <div className="section-header">
         <div className="badge">✦ LAO LOTTERY · PREDICT</div>
         <h1>ທຳນາຍຫວຍລາວ</h1>
-        <p className="header-sub">ປ້ອນຕົວເລກ 2 ໃບ ເພື່ອວິເຄາະ ແລະ ສ້າງລາຍການຊຸດ</p>
       </div>
 
       <div className="input-section">
