@@ -454,7 +454,14 @@ body::after {
   z-index: 1;
   max-width: 840px;
   margin: 0 auto;
-  padding: 1.25rem 1rem 7.5rem;
+  padding: 1.25rem 1rem calc(72px + max(12px, env(safe-area-inset-bottom)));
+}
+
+.predict-result > .card:last-child,
+.tab-panel > *:last-child,
+.tab-panel .card:last-child,
+.tab-panel .full-card:last-child {
+  margin-bottom: 0 !important;
 }
 
 /* ==========================================================================
