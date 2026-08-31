@@ -85,10 +85,6 @@ export default function PredictTab() {
             <span className="tag-sparkle">✦</span>
             <span>ປ້ອນຕົວເລກວິເຄາະ</span>
           </div>
-          <div className="input-sync-badge">
-            <span className={`sync-dot ${isSyncing ? 'pulse' : ''}`} />
-            <span>{isSyncing ? 'ອັບເດດ...' : formattedTime ? `Auto · ${formattedTime}` : 'Auto 8:30 (20:30)'}</span>
-          </div>
         </div>
 
         <div className="inputs-row">
