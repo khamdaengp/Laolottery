@@ -218,27 +218,44 @@
   box-shadow: 0 4px 12px rgba(44, 68, 125, 0.35) !important;
 }
 
+[data-theme="light"] .mobile-app-bottom-bar {
+  background: transparent !important;
+}
+
 [data-theme="light"] .bottom-bar-inner {
-  background: rgba(255, 255, 255, 0.98);
-  border-color: rgba(74, 113, 181, 0.35);
-  box-shadow: 0 -8px 30px rgba(18, 28, 58, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1.5px solid rgba(74, 113, 181, 0.25) !important;
+  box-shadow:
+    0 16px 36px rgba(18, 28, 58, 0.12),
+    0 4px 12px rgba(18, 28, 58, 0.05),
+    inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
 }
 
 [data-theme="light"] .bottom-tab-item {
-  color: #2c447d;
+  color: rgba(18, 28, 58, 0.6);
+}
+
+[data-theme="light"] .bottom-tab-item:hover:not(.active) {
+  background: rgba(74, 113, 181, 0.06);
+  color: #121c3a;
 }
 
 [data-theme="light"] .bottom-tab-item.active {
-  background: linear-gradient(180deg, rgba(74, 113, 181, 0.2) 0%, rgba(74, 113, 181, 0.06) 100%);
-  border-color: rgba(74, 113, 181, 0.5);
-  color: #121c3a;
-  box-shadow: 0 2px 8px rgba(74, 113, 181, 0.15);
+  background: rgba(74, 113, 181, 0.12) !important;
+  border-color: transparent !important;
+  color: #121c3a !important;
+  box-shadow: none !important;
 }
 
 [data-theme="light"] .bottom-tab-item.active .tab-label {
   color: #121c3a !important;
   font-weight: 800;
-  text-shadow: none;
+  opacity: 1;
+}
+
+[data-theme="light"] .bottom-tab-item.active .tab-icon-svg {
+  color: #2c447d !important;
+  filter: drop-shadow(0 2px 6px rgba(44, 68, 125, 0.3));
 }
 
 [data-theme="light"] .full-card {
@@ -398,7 +415,7 @@
 }
 
 [data-theme="light"] .mobile-app-bottom-bar {
-  background: #eef5fb;
+  background: transparent !important;
 }
 
 *, *::before, *::after {
@@ -1668,40 +1685,41 @@ tr:hover td {
 }
 
 /* ==========================================================================
-   MOBILE APP BOTTOM NAVIGATION DOCK (4 ITEMS · ULTRA CLEAN)
+   MOBILE APP BOTTOM NAVIGATION DOCK (GLOBAL FLOATING GLASS CAPSULE)
    ========================================================================== */
 .mobile-app-bottom-bar {
   position: fixed;
-  bottom: 0;
+  bottom: 12px;
   left: 0;
   right: 0;
   z-index: 9999;
   display: flex;
   justify-content: center;
   pointer-events: none;
-  padding: 0 12px 12px;
-  padding-bottom: max(12px, env(safe-area-inset-bottom));
-  animation: fadeUp 0.6s ease both;
+  padding: 0 16px;
+  background: transparent !important;
+  animation: fadeUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
 .bottom-bar-inner {
   pointer-events: auto;
   width: 100%;
-  max-width: 560px;
-  min-height: 68px;
-  background: rgba(18, 28, 58, 0.95);
-  border: 1px solid rgba(129, 174, 213, 0.35);
-  border-radius: var(--radius-xl);
-  padding: 7px 8px;
+  max-width: 420px;
+  min-height: 62px;
+  background: rgba(18, 28, 58, 0.88);
+  border: 1.5px solid rgba(129, 174, 213, 0.3);
+  border-radius: 9999px;
+  padding: 6px 8px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
+  gap: 4px;
+  align-items: center;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
   box-shadow:
-    0 -10px 40px rgba(0, 0, 0, 0.8),
-    0 0 25px rgba(74, 113, 181, 0.2),
-    inset 0 1px 0 rgba(129, 174, 213, 0.4);
+    0 16px 36px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(74, 113, 181, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 .bottom-tab-item {
@@ -1710,14 +1728,14 @@ tr:hover td {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 3px;
   background: transparent;
-  border: 1px solid transparent;
-  border-radius: var(--radius-md);
-  padding: 8px 4px 6px;
+  border: none;
+  border-radius: 9999px;
+  padding: 7px 4px 6px;
   cursor: pointer;
   position: relative;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   color: var(--text-dim);
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
@@ -1725,63 +1743,50 @@ tr:hover td {
 
 .bottom-tab-item:hover:not(.active) {
   background: rgba(74, 113, 181, 0.12);
-  color: var(--text);
-  transform: translateY(-2px);
+  color: #FFFFFF;
+  transform: translateY(-1px);
 }
 
 .bottom-tab-item.active {
-  background: linear-gradient(180deg, rgba(74, 113, 181, 0.3) 0%, rgba(44, 68, 125, 0.1) 100%);
-  border-color: rgba(129, 174, 213, 0.55);
-  color: #eef5fb;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  background: rgba(129, 174, 213, 0.16);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
-.tab-icon {
-  font-size: clamp(22px, 5.8vw, 26px);
-  line-height: 1;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+.tab-icon-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  color: var(--text-dim);
 }
 
-.bottom-tab-item.active .tab-icon {
-  transform: scale(1.16);
+.bottom-tab-item.active .tab-icon-svg {
+  transform: scale(1.08);
+  color: #81aed5;
+  filter: drop-shadow(0 0 8px rgba(129, 174, 213, 0.6));
 }
 
 .tab-label {
-  font-size: clamp(11px, 2.9vw, 13px);
-  font-weight: 700;
+  font-size: 11.5px;
+  font-weight: 600;
   line-height: 1.15;
   white-space: nowrap;
-  letter-spacing: -0.1px;
-  transition: color 0.2s;
+  letter-spacing: -0.2px;
+  transition: all 0.2s ease;
   font-family: var(--lao);
   text-align: center;
   max-width: 100%;
   overflow: hidden;
-  text-overflow: clip;
+  opacity: 0.7;
 }
 
 .bottom-tab-item.active .tab-label {
-  font-weight: 700;
-  color: var(--color-4);
-  text-shadow: 0 0 10px rgba(129, 174, 213, 0.4);
-}
-
-.tab-active-indicator {
-  position: absolute;
-  bottom: 2px;
-  left: 22%;
-  right: 22%;
-  height: 3px;
-  background: linear-gradient(90deg, #81aed5 0%, #4a71b5 100%);
-  border-radius: 3px 3px 0 0;
-  box-shadow: 0 0 10px rgba(129, 174, 213, 0.8), 0 -1px 4px rgba(74, 113, 181, 0.6);
-}
-
-[data-theme="light"] .tab-active-indicator {
-  background: linear-gradient(90deg, #4a71b5 0%, #2c447d 100%);
-  box-shadow: 0 0 8px rgba(74, 113, 181, 0.5);
+  font-weight: 800;
+  color: #FFFFFF;
+  opacity: 1;
+  text-shadow: 0 0 8px rgba(129, 174, 213, 0.5);
 }
 
 .tab-panel {

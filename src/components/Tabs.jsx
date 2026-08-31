@@ -82,7 +82,6 @@ export default function Tabs() {
             >
               <span className="tab-icon-svg">{tab.icon}</span>
               <span className="tab-label">{tab.label}</span>
-              {isActive && <div className="tab-active-indicator" />}
             </button>
           );
         })}
