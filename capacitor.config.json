@@ -1,0 +1,9 @@
+{
+  "appId": "com.laolottery.predict",
+  "appName": "ຫວຍລາວ · ທຳນາຍ & ວິເຄາະ",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "cleartext": true
+  }
+}
