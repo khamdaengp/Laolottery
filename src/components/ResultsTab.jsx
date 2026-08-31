@@ -135,16 +135,16 @@ export default function ResultsTab() {
         </div>
 
         <div className="table-scroll-container">
-          <table>
+          <table className="results-history-table">
             <thead>
               <tr>
-                <th style={{ width: '60px', textAlign: 'center' }}>ງວດ</th>
-                <th style={{ minWidth: '95px' }}>ວັນທີອອກ</th>
-                <th style={{ minWidth: '85px' }}>ເລກ 6 ຕົວ</th>
-                <th>5 ຕົວ</th>
-                <th>4 ຕົວ</th>
-                <th>3 ຕົວ</th>
-                <th>2 ຕົວ</th>
+                <th style={{ width: '55px', textAlign: 'center' }}>ງວດ</th>
+                <th style={{ minWidth: '85px', textAlign: 'left' }}>ວັນທີ</th>
+                <th style={{ textAlign: 'center' }}>ເລກ 6 ຕົວ</th>
+                <th style={{ textAlign: 'center' }}>5 ຕົວ</th>
+                <th style={{ textAlign: 'center' }}>4 ຕົວ</th>
+                <th style={{ textAlign: 'center' }}>3 ຕົວ</th>
+                <th style={{ textAlign: 'center' }}>2 ຕົວ</th>
               </tr>
             </thead>
             <tbody>
@@ -157,19 +157,21 @@ export default function ResultsTab() {
 
                 return (
                   <tr key={draw.id || draw.lotNumber || draw.roundNumber}>
-                    <td style={{ fontFamily: 'var(--mono)', fontWeight: '700', color: 'var(--color-4)' }}>
-                      #{draw.roundNumber || draw.lotNumber}
+                    <td style={{ textAlign: 'center' }}>
+                      <span className="draw-round-pill">
+                        #{draw.roundNumber || draw.lotNumber}
+                      </span>
                     </td>
-                    <td style={{ fontSize: '11px', whiteSpace: 'nowrap', opacity: 0.85 }}>
+                    <td className="draw-date-text" style={{ textAlign: 'left' }}>
                       {formatDate(draw.roundDate)}
                     </td>
-                    <td className="td-num td-highlight">
+                    <td className="td-num td-highlight" style={{ textAlign: 'center' }}>
                       {fullNum}
                     </td>
-                    <td className="td-num">{d5}</td>
-                    <td className="td-num">{d4}</td>
-                    <td className="td-num">{d3}</td>
-                    <td className="td-num td-highlight-2d">
+                    <td className="td-num" style={{ textAlign: 'center' }}>{d5}</td>
+                    <td className="td-num" style={{ textAlign: 'center' }}>{d4}</td>
+                    <td className="td-num" style={{ textAlign: 'center' }}>{d3}</td>
+                    <td className="td-num td-highlight-2d" style={{ textAlign: 'center' }}>
                       {d2}
                     </td>
                   </tr>

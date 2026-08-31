@@ -1655,6 +1655,48 @@ tr.search-matched td.td-num {
   color: #FFFFFF;
 }
 
+/* RESULTS HISTORY TABLE */
+.results-history-table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.results-history-table th,
+.results-history-table td {
+  padding: 10px 8px;
+  font-size: 12px;
+}
+
+.results-history-table .draw-round-pill {
+  display: inline-block;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--color-4);
+  background: rgba(74, 113, 181, 0.16);
+  border: 1px solid rgba(129, 174, 213, 0.25);
+  padding: 2px 6px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+[data-theme="light"] .results-history-table .draw-round-pill {
+  color: #2c447d !important;
+  background: rgba(74, 113, 181, 0.1) !important;
+  border-color: rgba(74, 113, 181, 0.2) !important;
+}
+
+.results-history-table .draw-date-text {
+  font-size: 11px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+[data-theme="light"] .results-history-table .draw-date-text {
+  color: #475569 !important;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
