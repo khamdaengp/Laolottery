@@ -87,21 +87,36 @@ export default function ResultsTab() {
 
       {/* DRAW HISTORY SECTION */}
       <div className="full-card" style={{ marginTop: '1.75rem' }}>
-        <div className="full-head">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span className="full-title">ປະຫວັດຜົນຫວຍຍ້ອນຫຼັງ</span>
-            <span className="card-count">{filteredHistory.length} ງວດ</span>
+        <div className="full-head-vertical">
+          <div className="full-head-top">
+            <div className="full-head-title-wrap">
+              <span className="full-head-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 3v5h5" />
+                  <path d="M3.05 13A9 9 0 1 0 6 5.3L3 8" />
+                  <path d="M12 7v5l4 2" />
+                </svg>
+              </span>
+              <div>
+                <h3 className="full-title">ປະຫວັດຜົນຫວຍຍ້ອນຫຼັງ</h3>
+                <span className="full-subtitle">ຜົນອອກລາງວັນທັງໝົດ</span>
+              </div>
+            </div>
+            <span className="card-count-badge">
+              {filteredHistory.length} ງວດ
+            </span>
           </div>
-          <div className="table-search-inline">
-            <div className="search-inline-wrap">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.7 }}>
+
+          <div className="history-search-bar">
+            <div className="history-search-inner">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="history-search-icon">
                 <circle cx="11" cy="11" r="8" />
                 <path d="m21 21-4.3-4.3" />
               </svg>
               <input
-                className="search-input"
+                className="history-search-input"
                 type="text"
-                placeholder="ຄົ້ນຫາງວດ/ເລກ..."
+                placeholder="ຄົ້ນຫາຕາມເລກ (ເຊັ່ນ: 89, 589) ຫຼື ວັນທີ..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -109,7 +124,8 @@ export default function ResultsTab() {
                 <button
                   type="button"
                   onClick={() => setSearchQuery('')}
-                  style={{ background: 'none', border: 'none', color: 'var(--color-4)', cursor: 'pointer', padding: '0 4px', fontSize: '12px' }}
+                  className="history-search-clear"
+                  title="ລຶບຄຳຄົ້ນຫາ"
                 >
                   ✕
                 </button>
@@ -122,9 +138,9 @@ export default function ResultsTab() {
           <table>
             <thead>
               <tr>
-                <th>ງວດທີ</th>
-                <th>ວັນທີ</th>
-                <th>ເລກ 6 ຕົວ</th>
+                <th style={{ width: '60px', textAlign: 'center' }}>ງວດ</th>
+                <th style={{ minWidth: '95px' }}>ວັນທີອອກ</th>
+                <th style={{ minWidth: '85px' }}>ເລກ 6 ຕົວ</th>
                 <th>5 ຕົວ</th>
                 <th>4 ຕົວ</th>
                 <th>3 ຕົວ</th>
