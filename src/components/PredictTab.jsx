@@ -102,10 +102,10 @@ export default function PredictTab() {
 
       <div className="input-section">
         <div className="input-header-row">
-          <div className="input-title-tag">
+          <h2 className="input-title-tag">
             <span className="tag-sparkle">✦</span>
             <span>ປ້ອນເລກ 2 ຕົວ ເພື່ອຄຳນວນ</span>
-          </div>
+          </h2>
         </div>
 
         <div className="inputs-row">
