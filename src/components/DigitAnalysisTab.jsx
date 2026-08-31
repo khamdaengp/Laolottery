@@ -95,19 +95,19 @@ export default function DigitAnalysisTab({ width }) {
                     <table>
                       <thead>
                         <tr>
-                          <th>Rank</th>
-                          <th>Number</th>
-                          <th>Count</th>
-                          <th>%</th>
+                          <th style={{ width: '65px', textAlign: 'center' }}># ອັນດັບ</th>
+                          <th>ຕົວເລກ</th>
+                          <th style={{ textAlign: 'center' }}>ອອກ (ຄັ້ງ)</th>
+                          <th style={{ textAlign: 'right' }}>ຄວາມຖີ່ (%)</th>
                         </tr>
                       </thead>
                       <tbody>
                         {analysisResult.lastList.map((row, idx) => (
                           <tr key={row.value}>
-                            <td>{idx + 1}</td>
+                            <td style={{ textAlign: 'center' }}>{idx + 1}</td>
                             <td className="td-num">{row.value}</td>
-                            <td>{row.count}</td>
-                            <td className="td-pct">{formatPercent(row.probability)}</td>
+                            <td style={{ textAlign: 'center' }}>{row.count}</td>
+                            <td className="td-pct" style={{ textAlign: 'right' }}>{formatPercent(row.probability)}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -128,19 +128,19 @@ export default function DigitAnalysisTab({ width }) {
                     <table>
                       <thead>
                         <tr>
-                          <th>Rank</th>
-                          <th>Number</th>
-                          <th>Count</th>
-                          <th>%</th>
+                          <th style={{ width: '65px', textAlign: 'center' }}># ອັນດັບ</th>
+                          <th>ຕົວເລກ</th>
+                          <th style={{ textAlign: 'center' }}>ອອກ (ຄັ້ງ)</th>
+                          <th style={{ textAlign: 'right' }}>ຄວາມຖີ່ (%)</th>
                         </tr>
                       </thead>
                       <tbody>
                         {analysisResult.firstList.map((row, idx) => (
                           <tr key={row.value}>
-                            <td>{idx + 1}</td>
+                            <td style={{ textAlign: 'center' }}>{idx + 1}</td>
                             <td className="td-num">{row.value}</td>
-                            <td>{row.count}</td>
-                            <td className="td-pct">{formatPercent(row.probability)}</td>
+                            <td style={{ textAlign: 'center' }}>{row.count}</td>
+                            <td className="td-pct" style={{ textAlign: 'right' }}>{formatPercent(row.probability)}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -162,19 +162,19 @@ export default function DigitAnalysisTab({ width }) {
                   <table>
                     <thead>
                       <tr>
-                        <th>Rank</th>
-                        <th>Number</th>
-                        <th>Count</th>
-                        <th>%</th>
+                        <th style={{ width: '65px', textAlign: 'center' }}># ອັນດັບ</th>
+                        <th>ຕົວເລກ</th>
+                        <th style={{ textAlign: 'center' }}>ອອກ (ຄັ້ງ)</th>
+                        <th style={{ textAlign: 'right' }}>ຄວາມຖີ່ (%)</th>
                       </tr>
                     </thead>
                     <tbody>
                       {analysisResult.lastList.map((row, idx) => (
                         <tr key={row.value}>
-                          <td>{idx + 1}</td>
+                          <td style={{ textAlign: 'center' }}>{idx + 1}</td>
                           <td className="td-num">{row.value}</td>
-                          <td>{row.count}</td>
-                          <td className="td-pct">{formatPercent(row.probability)}</td>
+                          <td style={{ textAlign: 'center' }}>{row.count}</td>
+                          <td className="td-pct" style={{ textAlign: 'right' }}>{formatPercent(row.probability)}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -193,15 +193,15 @@ export default function DigitAnalysisTab({ width }) {
                 <table>
                   <thead>
                     <tr>
-                      <th>Digit</th>
-                      <th>Probability</th>
+                      <th>ຫຼັກເລກ</th>
+                      <th style={{ textAlign: 'right' }}>ອັດຕາອອກ (%)</th>
                     </tr>
                   </thead>
                   <tbody>
                     {analysisResult.posList.map(row => (
                       <tr key={row.value}>
                         <td>{row.value}</td>
-                        <td className="td-pct">{formatPercent(row.probability)}</td>
+                        <td className="td-pct" style={{ textAlign: 'right' }}>{formatPercent(row.probability)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -219,17 +219,17 @@ export default function DigitAnalysisTab({ width }) {
                 <table>
                   <thead>
                     <tr>
-                      <th>Rank</th>
-                      <th>Digit</th>
-                      <th>%</th>
+                      <th style={{ width: '65px', textAlign: 'center' }}># ອັນດັບ</th>
+                      <th>ຫຼັກເລກ</th>
+                      <th style={{ textAlign: 'right' }}>ຄວາມຖີ່ (%)</th>
                     </tr>
                   </thead>
                   <tbody>
                     {analysisResult.topDigits.map((row, idx) => (
                       <tr key={row.value}>
-                        <td>{idx + 1}</td>
+                        <td style={{ textAlign: 'center' }}>{idx + 1}</td>
                         <td className="td-num">{row.value}</td>
-                        <td className="td-pct">{formatPercent(row.probability)}</td>
+                        <td className="td-pct" style={{ textAlign: 'right' }}>{formatPercent(row.probability)}</td>
                       </tr>
                     ))}
                   </tbody>
