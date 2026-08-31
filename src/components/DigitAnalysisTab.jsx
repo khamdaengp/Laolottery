@@ -9,32 +9,32 @@ import {
 const TAB_CONFIGS = {
   3: {
     badge: 'LAO LOTTERY · 3D ANALYSIS',
-    h1: '3D Top / Position Analysis',
-    sub: 'ດຶງຂໍ້ມູນລ່າສຸດແລະວິເຄາະ 3 ຕົວຫຼັງ, 3 ຕົວນ້ອຍ ແລະ ຕຳແໜ່ງຕົວເລກ 3',
+    h1: 'ວິເຄາະສະຖິຕິ 3 ຕົວ (3D)',
+    sub: '',
     lastTitle: 'TOP 20 LAST 3D',
     firstTitle: 'TOP 20 FIRST 3D',
     hasFirst: true
   },
   4: {
     badge: 'LAO LOTTERY · 4D ANALYSIS',
-    h1: '4D Top / Position Analysis',
-    sub: 'ດຶງຂໍ້ມູນລ່າສຸດແລະວິເຄາະ 4 ຕົວຫຼັງ, 4 ຕົວໜ້າ ແລະ ຕຳແໜ່ງຕົວເລກ',
+    h1: 'ວິເຄາະສະຖິຕິ 4 ຕົວ (4D)',
+    sub: '',
     lastTitle: 'TOP 20 LAST 4D',
     firstTitle: 'TOP 20 FIRST 4D',
     hasFirst: true
   },
   5: {
     badge: 'LAO LOTTERY · 5D ANALYSIS',
-    h1: '5D Top / Position Analysis',
-    sub: 'ດຶງຂໍ້ມູນລ່າສຸດແລະວິເຄາະ 5 ຕົວຫຼັງ, 5 ຕົວໜ້າ ແລະ ຕຳແໜ່ງຕົວເລກ',
+    h1: 'ວິເຄາະສະຖິຕິ 5 ຕົວ (5D)',
+    sub: '',
     lastTitle: 'TOP 20 LAST 5D',
     firstTitle: 'TOP 20 FIRST 5D',
     hasFirst: true
   },
   6: {
     badge: 'LAO LOTTERY · 6D ANALYSIS',
-    h1: '6D (Full Number) Analysis',
-    sub: 'ດຶງຂໍ້ມູນລ່າສຸດແລະວິເຄາະຕົວເລກເຕັມ 6 ຫຼັກ ແລະ ຕຳແໜ່ງຕົວເລກ',
+    h1: 'ວິເຄາະສະຖິຕິ 6 ຕົວ (6D)',
+    sub: '',
     lastTitle: 'TOP 20 FULL 6D',
     firstTitle: '',
     hasFirst: false
@@ -82,7 +82,6 @@ export default function DigitAnalysisTab({ width }) {
       <div className="section-header">
         <div className="badge">{config.badge}</div>
         <h1>{config.h1}</h1>
-        <p className="header-sub">{config.sub}</p>
         <div style={{ marginTop: '0.75rem', fontSize: '11px', color: 'var(--gold-dim)', fontFamily: 'var(--mono)', display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(232,184,75,0.06)', border: '1px solid rgba(232,184,75,0.18)', padding: '3px 12px', borderRadius: '20px' }}>
           <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: isSyncing ? 'var(--gold)' : 'var(--green)', boxShadow: isSyncing ? '0 0 6px var(--gold)' : '0 0 6px var(--green)' }} />
           {isSyncing ? 'ກຳລັງອັບເດດ...' : formattedTime ? `Auto-Reload 8:30 (20:30) & 4x/ມື້ · ${formattedTime} (${analysisResult?.totalDraws || 0} ງວດ)` : `Auto-Reload 8:30 (20:30)`}
