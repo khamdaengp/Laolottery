@@ -22,7 +22,7 @@ export default function ResultsTab() {
       if (isNaN(d.getTime())) return dateStr;
       const day = String(d.getDate()).padStart(2, '0');
       const month = String(d.getMonth() + 1).padStart(2, '0');
-      const year = d.getFullYear();
+      const year = String(d.getFullYear()).slice(-2);
       return `${day}/${month}/${year}`;
     } catch {
       return dateStr;
@@ -138,8 +138,8 @@ export default function ResultsTab() {
           <table className="results-history-table">
             <thead>
               <tr>
-                <th style={{ width: '55px', textAlign: 'center' }}>ງວດ</th>
-                <th style={{ minWidth: '85px', textAlign: 'left' }}>ວັນທີ</th>
+                <th style={{ width: '32px', textAlign: 'center' }}>No</th>
+                <th style={{ textAlign: 'center' }}>ວັນທີ</th>
                 <th style={{ textAlign: 'center' }}>ເລກ 6 ຕົວ</th>
                 <th style={{ textAlign: 'center' }}>5 ຕົວ</th>
                 <th style={{ textAlign: 'center' }}>4 ຕົວ</th>
@@ -157,12 +157,10 @@ export default function ResultsTab() {
 
                 return (
                   <tr key={draw.id || draw.lotNumber || draw.roundNumber}>
-                    <td style={{ textAlign: 'center' }}>
-                      <span className="draw-round-pill">
-                        #{draw.roundNumber || draw.lotNumber}
-                      </span>
+                    <td className="draw-no-text" style={{ textAlign: 'center' }}>
+                      {draw.roundNumber || draw.lotNumber}
                     </td>
-                    <td className="draw-date-text" style={{ textAlign: 'left' }}>
+                    <td className="draw-date-text" style={{ textAlign: 'center' }}>
                       {formatDate(draw.roundDate)}
                     </td>
                     <td className="td-num td-highlight" style={{ textAlign: 'center' }}>
