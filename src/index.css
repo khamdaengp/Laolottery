@@ -1807,43 +1807,76 @@ tr:hover td {
 
 .stat-box {
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-md);
-  padding: 1rem;
+  border: 1.5px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.1rem 1rem;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  transition: all 0.2s ease;
+}
+
+[data-theme="light"] .stat-box {
+  background: #FFFFFF !important;
+  border-color: rgba(74, 113, 181, 0.22) !important;
+  box-shadow: 0 6px 20px rgba(18, 28, 58, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.stat-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--color-4);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+[data-theme="light"] .stat-label {
+  color: #2c447d !important;
 }
 
 .stat-val {
   font-family: var(--mono);
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 800;
-  color: var(--color-5);
-  margin-bottom: 2px;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+[data-theme="light"] .stat-val {
+  color: #121c3a !important;
 }
 
 .stat-val.hot {
-  color: var(--color-4);
-  text-shadow: 0 0 12px rgba(129, 174, 213, 0.4);
+  color: #81aed5;
+  text-shadow: 0 0 14px rgba(129, 174, 213, 0.4);
+}
+
+[data-theme="light"] .stat-val.hot {
+  color: #2563eb !important;
+  text-shadow: none !important;
 }
 
 .stat-val.cold {
-  color: var(--color-3);
+  color: #7bb7d1;
 }
 
-.stat-label {
-  font-size: 11px;
-  color: var(--color-4);
-  font-weight: 700;
-  letter-spacing: 0.5px;
+[data-theme="light"] .stat-val.cold {
+  color: #0284c7 !important;
 }
 
 .stat-sub {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--color-4);
-  opacity: 0.85;
-  margin-top: 4px;
+  font-family: var(--lao);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-dim);
+  line-height: 1.2;
+}
+
+[data-theme="light"] .stat-sub {
+  color: #64748b !important;
 }
 
 .mini-bar {
