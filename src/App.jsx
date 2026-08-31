@@ -6,7 +6,6 @@ import PredictTab from './components/PredictTab';
 import ResultsTab from './components/ResultsTab';
 import AnalyzeTab from './components/AnalyzeTab';
 import MultiDigitTab from './components/MultiDigitTab';
-import Footer from './components/Footer';
 
 function MainApp() {
   const { activeTab } = useLottery();
@@ -38,7 +37,6 @@ function MainApp() {
         <MultiDigitTab />
       </div>
 
-      <Footer />
       <Tabs />
     </div>
   );

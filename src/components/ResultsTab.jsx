@@ -93,14 +93,28 @@ export default function ResultsTab() {
             <span className="card-count">{filteredHistory.length} ງວດ</span>
           </div>
           <div className="table-search-inline">
-            <input
-              className="search-input"
-              style={{ width: '130px' }}
-              type="text"
-              placeholder="ຄົ້ນຫາງວດ/ເລກ..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
+            <div className="search-inline-wrap">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.7 }}>
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+              <input
+                className="search-input"
+                type="text"
+                placeholder="ຄົ້ນຫາງວດ/ເລກ..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  style={{ background: 'none', border: 'none', color: 'var(--color-4)', cursor: 'pointer', padding: '0 4px', fontSize: '12px' }}
+                >
+                  ✕
+                </button>
+              )}
+            </div>
           </div>
         </div>
 
@@ -127,19 +141,19 @@ export default function ResultsTab() {
 
                 return (
                   <tr key={draw.id || draw.lotNumber || draw.roundNumber}>
-                    <td style={{ fontFamily: 'var(--mono)', fontWeight: '700', color: 'var(--gold-dim)' }}>
+                    <td style={{ fontFamily: 'var(--mono)', fontWeight: '700', color: 'var(--color-4)' }}>
                       #{draw.roundNumber || draw.lotNumber}
                     </td>
-                    <td style={{ fontSize: '11px', whiteSpace: 'nowrap' }}>
+                    <td style={{ fontSize: '11px', whiteSpace: 'nowrap', opacity: 0.85 }}>
                       {formatDate(draw.roundDate)}
                     </td>
-                    <td className="td-num" style={{ color: 'var(--gold)', fontWeight: '700' }}>
+                    <td className="td-num td-highlight">
                       {fullNum}
                     </td>
                     <td className="td-num">{d5}</td>
                     <td className="td-num">{d4}</td>
                     <td className="td-num">{d3}</td>
-                    <td className="td-num" style={{ color: 'var(--gold)', fontWeight: '700' }}>
+                    <td className="td-num td-highlight-2d">
                       {d2}
                     </td>
                   </tr>
