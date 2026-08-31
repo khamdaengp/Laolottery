@@ -22,15 +22,36 @@ export default function PredictTab() {
   const [searchQuery, setSearchQuery] = useState('');
   const resultRef = useRef(null);
   const n1Ref = useRef(null);
+  const n2Ref = useRef(null);
 
-  const handleInputChange = (setter) => (e) => {
+  const handleN1Change = (e) => {
     const val = e.target.value.replace(/\D/g, '').slice(0, 2);
-    setter(val);
+    setN1(val);
+    if (val.length === 2 && n2Ref.current) {
+      n2Ref.current.focus();
+    }
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
+  const handleN2Change = (e) => {
+    const val = e.target.value.replace(/\D/g, '').slice(0, 2);
+    setN2(val);
+  };
+
+  const handleN2KeyDown = (e) => {
+    if (e.key === 'Backspace' && !n2 && n1Ref.current) {
+      n1Ref.current.focus();
+    } else if (e.key === 'Enter') {
       handleRunPredict();
+    }
+  };
+
+  const handleN1KeyDown = (e) => {
+    if (e.key === 'Enter') {
+      if (n1.length === 2 && n2Ref.current) {
+        n2Ref.current.focus();
+      } else {
+        handleRunPredict();
+      }
     }
   };
 
@@ -83,15 +104,15 @@ export default function PredictTab() {
         <div className="input-header-row">
           <div className="input-title-tag">
             <span className="tag-sparkle">✦</span>
-            <span>ປ້ອນຕົວເລກວິເຄາະ</span>
+            <span>ປ້ອນເລກ 2 ຕົວ ເພື່ອຄຳນວນ</span>
           </div>
         </div>
 
         <div className="inputs-row">
           <div className="num-input-wrap">
             <label htmlFor="n1">
-              <span>ຕົວເລກທີ 01</span>
-              <span className="label-hint">2 ຕົວ</span>
+              <span>ເລກຊຸດທີ 1</span>
+              <span className="label-hint">2 ຫຼັກ</span>
             </label>
             <input
               ref={n1Ref}
@@ -103,17 +124,20 @@ export default function PredictTab() {
               inputMode="numeric"
               autoComplete="off"
               value={n1}
-              onChange={handleInputChange(setN1)}
-              onKeyDown={handleKeyDown}
+              onChange={handleN1Change}
+              onKeyDown={handleN1KeyDown}
             />
           </div>
-          <div className="input-sep">×</div>
+          <div className="input-sep">
+            <span>×</span>
+          </div>
           <div className="num-input-wrap">
             <label htmlFor="n2">
-              <span>ຕົວເລກທີ 02</span>
-              <span className="label-hint">2 ຕົວ</span>
+              <span>ເລກຊຸດທີ 2</span>
+              <span className="label-hint">2 ຫຼັກ</span>
             </label>
             <input
+              ref={n2Ref}
               className="num-input"
               type="text"
               id="n2"
@@ -122,8 +146,8 @@ export default function PredictTab() {
               inputMode="numeric"
               autoComplete="off"
               value={n2}
-              onChange={handleInputChange(setN2)}
-              onKeyDown={handleKeyDown}
+              onChange={handleN2Change}
+              onKeyDown={handleN2KeyDown}
             />
           </div>
         </div>
@@ -140,7 +164,7 @@ export default function PredictTab() {
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor" fillOpacity="0.3" />
               </svg>
             </span>
-            <span>ເລີ່ມຕົ້ນທຳນາຍ / GENERATE PREDICTION</span>
+            <span>ເລີ່ມຕົ້ນວິເຄາະ / GENERATE PREDICTION</span>
           </button>
         </div>
       </div>
