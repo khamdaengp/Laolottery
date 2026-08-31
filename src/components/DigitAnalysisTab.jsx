@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { useLottery } from '../context/LotteryContext';
 import CopyButton from './CopyButton';
 import {
@@ -50,8 +50,6 @@ export default function DigitAnalysisTab({ width }) {
     lastSyncTime
   } = useLottery();
 
-  const [searchQuery, setSearchQuery] = useState('');
-
   // Directly retrieve analysis data for this width from context/localStorage
   const analysisResult = allAnalysisData?.[`d${width}`] || null;
 
@@ -72,11 +70,6 @@ export default function DigitAnalysisTab({ width }) {
     ? new Date(lastSyncTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     : null;
 
-  const isMatchedBySearch = (numStr) => {
-    if (!searchQuery) return false;
-    return String(numStr).includes(searchQuery);
-  };
-
   return (
     <div>
       <div className="section-header">
@@ -89,33 +82,7 @@ export default function DigitAnalysisTab({ width }) {
       </div>
 
       {analysisResult && (
-        <>
-          {/* SEARCH BAR */}
-          <div className="search-wrap-bar">
-            <span className="search-icon-symbol">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.3-4.3" />
-              </svg>
-            </span>
-            <input
-              className="search-input-field"
-              type="text"
-              placeholder={`ຄົ້ນຫາຕົວເລກໃນຕາຕະລາງ & ຊຸດ ${width}D (Search numbers)...`}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value.trim())}
-            />
-            {searchQuery && (
-              <button
-                className="search-clear-btn"
-                onClick={() => setSearchQuery('')}
-                type="button"
-              >
-                ✕ ລ້າງ
-              </button>
-            )}
-          </div>
-
+        <div>
           <div>
             {config.hasFirst ? (
               <div className="grid-2">
@@ -139,17 +106,14 @@ export default function DigitAnalysisTab({ width }) {
                         </tr>
                       </thead>
                       <tbody>
-                        {analysisResult.lastList.map((row, idx) => {
-                          const isSearched = isMatchedBySearch(row.value);
-                          return (
-                            <tr key={row.value} className={isSearched ? 'search-matched' : ''}>
-                              <td>{idx + 1}</td>
-                              <td className="td-num">{row.value}</td>
-                              <td>{row.count}</td>
-                              <td className="td-pct">{formatPercent(row.probability)}</td>
-                            </tr>
-                          );
-                        })}
+                        {analysisResult.lastList.map((row, idx) => (
+                          <tr key={row.value}>
+                            <td>{idx + 1}</td>
+                            <td className="td-num">{row.value}</td>
+                            <td>{row.count}</td>
+                            <td className="td-pct">{formatPercent(row.probability)}</td>
+                          </tr>
+                        ))}
                       </tbody>
                     </table>
                   </div>
@@ -175,17 +139,14 @@ export default function DigitAnalysisTab({ width }) {
                         </tr>
                       </thead>
                       <tbody>
-                        {analysisResult.firstList.map((row, idx) => {
-                          const isSearched = isMatchedBySearch(row.value);
-                          return (
-                            <tr key={row.value} className={isSearched ? 'search-matched' : ''}>
-                              <td>{idx + 1}</td>
-                              <td className="td-num">{row.value}</td>
-                              <td>{row.count}</td>
-                              <td className="td-pct">{formatPercent(row.probability)}</td>
-                            </tr>
-                          );
-                        })}
+                        {analysisResult.firstList.map((row, idx) => (
+                          <tr key={row.value}>
+                            <td>{idx + 1}</td>
+                            <td className="td-num">{row.value}</td>
+                            <td>{row.count}</td>
+                            <td className="td-pct">{formatPercent(row.probability)}</td>
+                          </tr>
+                        ))}
                       </tbody>
                     </table>
                   </div>
@@ -212,17 +173,14 @@ export default function DigitAnalysisTab({ width }) {
                       </tr>
                     </thead>
                     <tbody>
-                      {analysisResult.lastList.map((row, idx) => {
-                        const isSearched = isMatchedBySearch(row.value);
-                        return (
-                          <tr key={row.value} className={isSearched ? 'search-matched' : ''}>
-                            <td>{idx + 1}</td>
-                            <td className="td-num">{row.value}</td>
-                            <td>{row.count}</td>
-                            <td className="td-pct">{formatPercent(row.probability)}</td>
-                          </tr>
-                        );
-                      })}
+                      {analysisResult.lastList.map((row, idx) => (
+                        <tr key={row.value}>
+                          <td>{idx + 1}</td>
+                          <td className="td-num">{row.value}</td>
+                          <td>{row.count}</td>
+                          <td className="td-pct">{formatPercent(row.probability)}</td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
@@ -244,15 +202,12 @@ export default function DigitAnalysisTab({ width }) {
                     </tr>
                   </thead>
                   <tbody>
-                    {analysisResult.posList.map(row => {
-                      const isSearched = isMatchedBySearch(row.value);
-                      return (
-                        <tr key={row.value} className={isSearched ? 'search-matched' : ''}>
-                          <td>{row.value}</td>
-                          <td className="td-pct">{formatPercent(row.probability)}</td>
-                        </tr>
-                      );
-                    })}
+                    {analysisResult.posList.map(row => (
+                      <tr key={row.value}>
+                        <td>{row.value}</td>
+                        <td className="td-pct">{formatPercent(row.probability)}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -274,16 +229,13 @@ export default function DigitAnalysisTab({ width }) {
                     </tr>
                   </thead>
                   <tbody>
-                    {analysisResult.topDigits.map((row, idx) => {
-                      const isSearched = isMatchedBySearch(row.value);
-                      return (
-                        <tr key={row.value} className={isSearched ? 'search-matched' : ''}>
-                          <td>{idx + 1}</td>
-                          <td className="td-num">{row.value}</td>
-                          <td className="td-pct">{formatPercent(row.probability)}</td>
-                        </tr>
-                      );
-                    })}
+                    {analysisResult.topDigits.map((row, idx) => (
+                      <tr key={row.value}>
+                        <td>{idx + 1}</td>
+                        <td className="td-num">{row.value}</td>
+                        <td className="td-pct">{formatPercent(row.probability)}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -304,14 +256,11 @@ export default function DigitAnalysisTab({ width }) {
                     </div>
                     <div className="card-body">
                       <div className="nums-grid">
-                        {comboState.sampleCombos.map(n => {
-                          const isSearched = isMatchedBySearch(n);
-                          return (
-                            <span key={n} className={`num-tag ${isSearched ? 'search-matched' : ''}`}>
-                              {n}
-                            </span>
-                          );
-                        })}
+                        {comboState.sampleCombos.map(n => (
+                          <span key={n} className="num-tag">
+                            {n}
+                          </span>
+                        ))}
                       </div>
                       <div className="empty-msg">
                         {`Top digits (${topDigitsForNote.join(',')}) + ຕົວເລກທີ່ຢູ່ທັງ Top 20 ແລະ ອອກຊ້ຳ ≥ 2 ຄັ້ງ (${comboState.sampleSuffix})`}
@@ -332,14 +281,11 @@ export default function DigitAnalysisTab({ width }) {
                     </div>
                     <div className="card-body">
                       <div className="nums-grid">
-                        {comboState.fullCombos.map(n => {
-                          const isSearched = isMatchedBySearch(n);
-                          return (
-                            <span key={n} className={`num-tag ${isSearched ? 'search-matched' : ''}`}>
-                              {n}
-                            </span>
-                          );
-                        })}
+                        {comboState.fullCombos.map(n => (
+                          <span key={n} className="num-tag">
+                            {n}
+                          </span>
+                        ))}
                       </div>
                       <div className="empty-msg">
                         {`All digits (0-9) + ຕົວເລກທີ່ຢູ່ທັງ Top 20 ແລະ ອອກຊ້ຳ ≥ 2 ຄັ້ງ (${comboState.sampleSuffix})`}
@@ -350,7 +296,7 @@ export default function DigitAnalysisTab({ width }) {
               </>
             )}
           </div>
-        </>
+        </div>
       )}
     </div>
   );
