@@ -148,7 +148,7 @@ export default function ResultsTab() {
               </tr>
             </thead>
             <tbody>
-              {filteredHistory.map((draw) => {
+              {filteredHistory.map((draw, idx) => {
                 const fullNum = pad(draw.winNumber, 6);
                 const d5 = fullNum.slice(1);
                 const d4 = fullNum.slice(2);
@@ -156,9 +156,9 @@ export default function ResultsTab() {
                 const d2 = fullNum.slice(4);
 
                 return (
-                  <tr key={draw.id || draw.lotNumber || draw.roundNumber}>
+                  <tr key={draw.id || draw.lotNumber || draw.roundNumber || idx}>
                     <td className="draw-no-text" style={{ textAlign: 'center' }}>
-                      {draw.roundNumber || draw.lotNumber}
+                      {idx + 1}
                     </td>
                     <td className="draw-date-text" style={{ textAlign: 'center' }}>
                       {formatDate(draw.roundDate)}
