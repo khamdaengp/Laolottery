@@ -75,10 +75,6 @@ export default function DigitAnalysisTab({ width }) {
       <div className="section-header">
         <div className="badge">{config.badge}</div>
         <h1>{config.h1}</h1>
-        <div style={{ marginTop: '0.75rem', fontSize: '11px', color: 'var(--gold-dim)', fontFamily: 'var(--mono)', display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(232,184,75,0.06)', border: '1px solid rgba(232,184,75,0.18)', padding: '3px 12px', borderRadius: '20px' }}>
-          <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: isSyncing ? 'var(--gold)' : 'var(--green)', boxShadow: isSyncing ? '0 0 6px var(--gold)' : '0 0 6px var(--green)' }} />
-          {isSyncing ? 'ກຳລັງອັບເດດ...' : formattedTime ? `Auto-Reload 8:30 (20:30) & 4x/ມື້ · ${formattedTime} (${analysisResult?.totalDraws || 0} ງວດ)` : `Auto-Reload 8:30 (20:30)`}
-        </div>
       </div>
 
       {analysisResult && (
