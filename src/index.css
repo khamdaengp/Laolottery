@@ -1382,6 +1382,35 @@ tr.search-matched td.td-num {
   color: var(--text-dim);
 }
 
+.latest-hero-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+[data-theme="light"] .latest-hero-card {
+  background: #FFFFFF !important;
+  border-color: rgba(74, 113, 181, 0.25) !important;
+  box-shadow: 0 12px 36px rgba(18, 28, 58, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="light"] .latest-round-tag {
+  background: rgba(74, 113, 181, 0.12) !important;
+  border-color: rgba(74, 113, 181, 0.3) !important;
+  color: #121c3a !important;
+}
+
+[data-theme="light"] .latest-date-text {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .latest-date-text strong {
+  color: #121c3a !important;
+}
+
 .latest-date-text strong {
   color: var(--text);
   font-family: var(--mono);
@@ -1390,28 +1419,31 @@ tr.search-matched td.td-num {
 .latest-ball-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 0.5rem 0;
+  justify-content: space-between;
+  gap: clamp(4px, 1.8vw, 10px);
+  flex-wrap: nowrap;
+  padding: 0.5rem 0 0.25rem;
+  width: 100%;
 }
 
 .lottery-ball {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
+  flex: 1;
+  max-width: 52px;
 }
 
 .ball-digit {
-  width: 52px;
-  height: 52px;
+  width: clamp(40px, 11.5vw, 52px);
+  height: clamp(40px, 11.5vw, 52px);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--mono);
-  font-size: 24px;
+  font-size: clamp(19px, 5.5vw, 24px);
   font-weight: 800;
   color: #070E1C;
   background: radial-gradient(circle at 35% 30%, #D6E4F5 0%, #7BB7D1 40%, #4AA0C4 75%, #1D3A6D 100%);
@@ -1428,10 +1460,15 @@ tr.search-matched td.td-num {
 }
 
 .ball-pos-label {
-  font-size: 10px;
-  color: var(--gold-dim);
+  font-size: clamp(9px, 2.4vw, 11px);
+  color: var(--color-4);
   font-family: var(--lao);
-  font-weight: 600;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+[data-theme="light"] .ball-pos-label {
+  color: #2c447d !important;
 }
 
 /* ==========================================================================
