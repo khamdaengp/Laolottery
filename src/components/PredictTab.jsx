@@ -286,11 +286,7 @@ export default function PredictTab() {
                     </svg>
                   </div>
                   <div className="match-info">
-                    <div className="match-title-row">
-                      <span className="match-main-title">ຕົວເລກ (ອອກຫຼາຍ + ອອກຊ້ຳ)</span>
-                      <span className="match-tag-pill">Top 20 ∩ ອອກຊ້ຳ</span>
-                    </div>
-                    <div className="match-sub-text">ຕົວເລກທີ່ຢູ່ທັງ Top 20 ແລະ ອອກຊ້ຳ ≥ 2 ຄັ້ງ</div>
+                    <span className="match-main-title">ຕົວເລກ (ອອກຫຼາຍ + ອອກຊ້ຳ)</span>
                   </div>
                 </div>
                 <div className="match-actions">
