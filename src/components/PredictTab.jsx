@@ -276,16 +276,25 @@ export default function PredictTab() {
           {/* MATCH CARD: Top 20 ∩ Dup */}
           {analyzeData.apiTop10.length > 0 && (
             <div className="match-card">
-              <div className="match-head">
-                <div className="match-title-wrap">
-                  <span className="match-head-badge">✦ MATCH</span>
-                  <div>
-                    <div className="match-title">ຕົວເລກ MATCH (ອອກຫຼາຍ + ອອກຊ້ຳ)</div>
-                    <div className="match-label">ຕົວເລກທີ່ຢູ່ທັງ Top 20 ແລະ ອອກຊ້ຳ ≥ 2 ຄັ້ງ</div>
+              <div className="match-head-modern">
+                <div className="match-left">
+                  <div className="match-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <circle cx="12" cy="12" r="6" />
+                      <circle cx="12" cy="12" r="2" fill="currentColor" />
+                    </svg>
+                  </div>
+                  <div className="match-info">
+                    <div className="match-title-row">
+                      <span className="match-main-title">ຕົວເລກ MATCH</span>
+                      <span className="match-tag-pill">Top 20 ∩ ອອກຊ້ຳ</span>
+                    </div>
+                    <div className="match-sub-text">ຕົວເລກທີ່ຢູ່ທັງ Top 20 ແລະ ອອກຊ້ຳ ≥ 2 ຄັ້ງ</div>
                   </div>
                 </div>
-                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                  <span className="card-count">{matchList.length} ຕົວ</span>
+                <div className="match-actions">
+                  <span className="match-count-badge">{matchList.length} ຕົວ</span>
                   <CopyButton items={matchList} />
                 </div>
               </div>
