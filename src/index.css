@@ -191,24 +191,24 @@
 }
 
 [data-theme="light"] .num-tag {
-  background: #FFFFFF;
-  border: 1.5px solid rgba(22, 91, 117, 0.35);
-  color: #031926;
-  font-weight: 700;
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(22, 91, 117, 0.3) !important;
+  color: #031926 !important;
+  font-weight: 800 !important;
   box-shadow: none !important;
 }
 
 [data-theme="light"] .num-tag:hover {
-  background: rgba(22, 91, 117, 0.12);
-  border-color: #165b75;
-  color: #031926;
+  background: rgba(22, 91, 117, 0.12) !important;
+  border-color: #165b75 !important;
+  color: #031926 !important;
 }
 
 [data-theme="light"] .num-tag.hot {
-  background: rgba(92, 148, 151, 0.2);
-  border-color: #165b75;
-  color: #031926;
-  font-weight: 800;
+  background: rgba(92, 148, 151, 0.35) !important;
+  border-color: #165b75 !important;
+  color: #031926 !important;
+  font-weight: 800 !important;
   box-shadow: none !important;
 }
 
@@ -216,7 +216,7 @@
   background: linear-gradient(135deg, #165b75 0%, #031926 100%) !important;
   border-color: #031926 !important;
   color: #FFFFFF !important;
-  font-weight: 800;
+  font-weight: 900 !important;
   box-shadow: none !important;
 }
 
@@ -1490,7 +1490,7 @@ h1 {
   background: rgba(22, 91, 117, 0.35);
   border: 1.5px solid rgba(138, 184, 185, 0.45);
   border-radius: 12px;
-  color: #f4f6f6 !important;
+  color: #f4f6f6;
   padding: 7px 0;
   width: 100%;
   display: inline-flex;
@@ -1507,23 +1507,23 @@ h1 {
 .num-tag:hover {
   background: rgba(92, 148, 151, 0.45);
   border-color: #8ab8b9;
-  color: #FFFFFF !important;
+  color: #FFFFFF;
   transform: translateY(-1px);
 }
 
 .num-tag.hot {
-  color: #FFFFFF !important;
-  border-color: #8ab8b9 !important;
-  background: rgba(92, 148, 151, 0.5) !important;
+  color: #FFFFFF;
+  border-color: #8ab8b9;
+  background: rgba(92, 148, 151, 0.5);
   box-shadow: none !important;
 }
 
 .num-tag.match {
-  color: #031926 !important;
-  background: linear-gradient(135deg, #8ab8b9 0%, #5c9497 100%) !important;
-  border-color: #f4f6f6 !important;
+  color: #031926;
+  background: linear-gradient(135deg, #8ab8b9 0%, #5c9497 100%);
+  border-color: #f4f6f6;
   box-shadow: none !important;
-  font-weight: 900 !important;
+  font-weight: 900;
 }
 
 .num-tag.search-matched {
