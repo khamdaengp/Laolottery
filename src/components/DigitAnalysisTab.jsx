@@ -260,9 +260,6 @@ export default function DigitAnalysisTab({ width, topSlot }) {
                           </span>
                         ))}
                       </div>
-                      <div className="empty-msg">
-                        {`Top digits (${topDigitsForNote.join(',')}) + ຕົວເລກທີ່ຢູ່ທັງ Top 20 ແລະ ອອກຊ້ຳ ≥ 2 ຄັ້ງ (${comboState.sampleSuffix})`}
-                      </div>
                     </div>
                   </div>
                 )}
@@ -284,9 +281,6 @@ export default function DigitAnalysisTab({ width, topSlot }) {
                             {n}
                           </span>
                         ))}
-                      </div>
-                      <div className="empty-msg">
-                        {`All digits (0-9) + ຕົວເລກທີ່ຢູ່ທັງ Top 20 ແລະ ອອກຊ້ຳ ≥ 2 ຄັ້ງ (${comboState.sampleSuffix})`}
                       </div>
                     </div>
                   </div>
