@@ -171,13 +171,21 @@ export default function AnalyzeTab() {
           {/* ANALYZE MATCH: Top 20 ∩ latest predict dup */}
           {analyzeData.apiTop10.length > 0 && dupList.length > 0 && (
             <div className="match-card">
-              <div className="match-head">
-                <div className="match-head-info">
-                  <div className="match-title">CROSS MATCH (TOP 20 ∩ ອອກຊ້ຳ)</div>
-                  <div className="match-label">ຕົວເລກ Top 20 ທີ່ກົງກັບລາຍການອອກຊ້ຳ</div>
+              <div className="match-head-modern">
+                <div className="match-left">
+                  <div className="match-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <circle cx="12" cy="12" r="6" />
+                      <circle cx="12" cy="12" r="2" fill="currentColor" />
+                    </svg>
+                  </div>
+                  <div className="match-info">
+                    <span className="match-main-title">ອອກຫຼາຍ+ອອກຊ້ຳ</span>
+                  </div>
                 </div>
-                <div className="match-head-action">
-                  <span className="card-count">{analyzeCrossMatchList.length} ຕົວ</span>
+                <div className="match-actions">
+                  <span className="match-count-badge">{analyzeCrossMatchList.length} ຕົວ</span>
                   <CopyButton items={analyzeCrossMatchList} />
                 </div>
               </div>
