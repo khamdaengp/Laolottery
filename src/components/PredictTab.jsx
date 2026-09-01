@@ -306,7 +306,7 @@ export default function PredictTab() {
                       );
                     })
                   ) : (
-                    <span className="empty-msg">ບໍ່ມີ cross match</span>
+                    <span className="empty-msg">ບໍ່ມີ</span>
                   )}
                 </div>
               </div>
