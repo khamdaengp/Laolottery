@@ -1469,9 +1469,40 @@ h1 {
   box-sizing: border-box;
 }
 
+.nums-grid-3d {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.nums-grid-4d {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.nums-grid-5d {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.nums-grid-6d {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 @media (max-width: 480px) {
   .nums-grid {
     grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+  }
+  .nums-grid-3d {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .nums-grid-4d {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .nums-grid-5d {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .nums-grid-6d {
+    grid-template-columns: repeat(3, 1fr);
     gap: 6px;
   }
 }
@@ -1481,11 +1512,20 @@ h1 {
     grid-template-columns: repeat(5, 1fr);
     gap: 5px;
   }
+  .nums-grid-4d {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nums-grid-5d {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nums-grid-6d {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .num-tag {
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: clamp(11px, 3.4vw, 14px);
   font-weight: 800;
   background: rgba(22, 91, 117, 0.35);
   border: 1.5px solid rgba(138, 184, 185, 0.45);
@@ -1502,6 +1542,9 @@ h1 {
   cursor: default;
   box-sizing: border-box;
   box-shadow: none !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .num-tag:hover {

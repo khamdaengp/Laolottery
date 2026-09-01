@@ -253,7 +253,7 @@ export default function DigitAnalysisTab({ width, topSlot }) {
                       </div>
                     </div>
                     <div className="card-body">
-                      <div className="nums-grid">
+                      <div className={`nums-grid nums-grid-${width}d`}>
                         {comboState.sampleCombos.map(n => (
                           <span key={n} className="num-tag">
                             {n}
@@ -275,7 +275,7 @@ export default function DigitAnalysisTab({ width, topSlot }) {
                       </div>
                     </div>
                     <div className="card-body">
-                      <div className="nums-grid">
+                      <div className={`nums-grid nums-grid-${width}d`}>
                         {comboState.fullCombos.map(n => (
                           <span key={n} className="num-tag">
                             {n}
