@@ -1395,21 +1395,30 @@ h1 {
   font-size: 12px;
   font-weight: 700;
   color: var(--color-4);
-  min-width: 48px;
+  min-width: 52px;
   text-align: right;
   flex-shrink: 0;
 }
 
 [data-theme="light"] .pct {
-  color: #2c447d !important;
+  color: #165b75 !important;
+}
+
+.match-dot-slot {
+  width: 10px;
+  height: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .match-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-4);
-  box-shadow: 0 0 8px var(--color-4);
+  background: #38E5B0;
+  box-shadow: none !important;
   flex-shrink: 0;
 }
 

@@ -113,9 +113,9 @@ export default function AnalyzeTab() {
                           />
                         </div>
                         <span className="pct">{prob.toFixed(2)}%</span>
-                        {isMatch && (
-                          <div className="match-dot" title="ກົງກັບ ອອກຊ້ຳ" />
-                        )}
+                        <span className="match-dot-slot">
+                          {isMatch && <div className="match-dot" title="ກົງກັບ ອອກຊ້ຳ" />}
+                        </span>
                       </li>
                     );
                   })}
@@ -157,9 +157,9 @@ export default function AnalyzeTab() {
                           />
                         </div>
                         <span className="pct">{prob.toFixed(2)}%</span>
-                        {isMatch && (
-                          <div className="match-dot" title="ກົງກັບ ອອກຊ້ຳ" />
-                        )}
+                        <span className="match-dot-slot">
+                          {isMatch && <div className="match-dot" title="ກົງກັບ ອອກຊ້ຳ" />}
+                        </span>
                       </li>
                     );
                   })}
