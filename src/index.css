@@ -1025,7 +1025,7 @@ h1 {
 /* ==========================================================================
    CARDS & GRIDS
    ========================================================================== */
-.card, .match-card, .full-card {
+.card, .full-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
@@ -1037,22 +1037,103 @@ h1 {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
 }
 
-.card-head, .match-head, .full-head {
+.match-card {
+  background: var(--card-bg);
+  border: 1.5px solid rgba(92, 148, 151, 0.45);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 10px 30px rgba(3, 25, 38, 0.55), 0 0 20px rgba(92, 148, 151, 0.15);
+}
+
+[data-theme="light"] .match-card {
+  background: #FFFFFF !important;
+  border-color: rgba(22, 91, 117, 0.3) !important;
+  box-shadow: 0 8px 24px rgba(3, 25, 38, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.card-head, .full-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 1.25rem;
   border-bottom: 1px solid var(--card-border);
-  background: rgba(232, 184, 75, 0.035);
+  background: rgba(92, 148, 151, 0.05);
 }
 
-.card-title, .match-title, .full-title {
+.match-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1.5px solid rgba(92, 148, 151, 0.3);
+  background: rgba(22, 91, 117, 0.2);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+[data-theme="light"] .match-head {
+  background: rgba(22, 91, 117, 0.08) !important;
+  border-bottom-color: rgba(22, 91, 117, 0.18) !important;
+}
+
+.match-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.match-head-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(135deg, #165b75 0%, #031926 100%);
+  border: 1px solid rgba(138, 184, 185, 0.5);
+  color: #FFFFFF;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(3, 25, 38, 0.3);
+  flex-shrink: 0;
+}
+
+.card-title, .full-title {
   font-family: var(--mono);
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 1.5px;
   color: var(--text-dim);
   text-transform: uppercase;
+}
+
+.match-title {
+  font-family: var(--lao);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+[data-theme="light"] .match-title {
+  color: #031926 !important;
+}
+
+.match-label {
+  font-family: var(--lao);
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+[data-theme="light"] .match-label {
+  color: #165b75 !important;
 }
 
 .card-count {

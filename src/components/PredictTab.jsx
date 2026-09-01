@@ -277,9 +277,12 @@ export default function PredictTab() {
           {analyzeData.apiTop10.length > 0 && (
             <div className="match-card">
               <div className="match-head">
-                <div>
-                  <div className="match-title">ລາຍການ MATCH — Top 20 ∩ ອອກຊ້ຳ</div>
-                  <div className="match-label">ຕົວເລກທີ່ຢູ່ທັງ Top 20 ແລະ ອອກຊ້ຳ ≥ 2 ຄັ້ງ</div>
+                <div className="match-title-wrap">
+                  <span className="match-head-badge">✦ MATCH</span>
+                  <div>
+                    <div className="match-title">ຕົວເລກ MATCH (ອອກຫຼາຍ + ອອກຊ້ຳ)</div>
+                    <div className="match-label">ຕົວເລກທີ່ຢູ່ທັງ Top 20 ແລະ ອອກຊ້ຳ ≥ 2 ຄັ້ງ</div>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                   <span className="card-count">{matchList.length} ຕົວ</span>
