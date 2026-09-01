@@ -286,7 +286,7 @@ export default function PredictTab() {
                     </svg>
                   </div>
                   <div className="match-info">
-                    <span className="match-main-title">ຕົວເລກ (ອອກຫຼາຍ + ອອກຊ້ຳ)</span>
+                    <span className="match-main-title">ອອກຫຼາຍ+ອອກຊ້ຳ</span>
                   </div>
                 </div>
                 <div className="match-actions">

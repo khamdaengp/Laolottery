@@ -14,7 +14,7 @@ export default function Header() {
         <img src="/logo.png" alt="Lao Lottery Logo" className="app-header-logo" />
         <div className="app-brand-text">
           <span className="app-brand-title">ວິເຄາະຫວຍລາວ</span>
-          <span className="app-brand-sub">LAO LOTTERY · v3.24.0</span>
+          <span className="app-brand-sub">LAO LOTTERY · v3.25.0</span>
         </div>
       </div>
       <div className="app-header-actions">
