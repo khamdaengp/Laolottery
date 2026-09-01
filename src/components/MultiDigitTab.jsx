@@ -50,33 +50,33 @@ const DIGIT_OPTIONS = [
 export default function MultiDigitTab() {
   const [activeWidth, setActiveWidth] = useState(3);
 
+  const switcherBar = (
+    <div className="top-digit-bar-wrap">
+      <div className="digit-segmented-bar">
+        {DIGIT_OPTIONS.map((opt) => {
+          const isSelected = activeWidth === opt.width;
+          return (
+            <button
+              key={opt.width}
+              className={`digit-segment-btn ${isSelected ? 'active' : ''}`}
+              onClick={() => {
+                setActiveWidth(opt.width);
+              }}
+              type="button"
+            >
+              <span className="segment-icon-svg">{opt.icon}</span>
+              <span className="segment-label">{opt.label}</span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+
   return (
     <div className="multidigit-page">
-      {/* RENDER CURRENT SELECTED DIGIT ANALYSIS */}
-      <DigitAnalysisTab width={activeWidth} />
-
-      {/* BOTTOM-DOCKED SUB-NAV SWITCHER BAR */}
-      <div className="bottom-digit-bar-wrap">
-        <div className="digit-segmented-bar">
-          {DIGIT_OPTIONS.map((opt) => {
-            const isSelected = activeWidth === opt.width;
-            return (
-              <button
-                key={opt.width}
-                className={`digit-segment-btn ${isSelected ? 'active' : ''}`}
-                onClick={() => {
-                  setActiveWidth(opt.width);
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                type="button"
-              >
-                <span className="segment-icon-svg">{opt.icon}</span>
-                <span className="segment-label">{opt.label}</span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
+      {/* RENDER CURRENT SELECTED DIGIT ANALYSIS WITH TOP SWITCHER */}
+      <DigitAnalysisTab width={activeWidth} topSlot={switcherBar} />
     </div>
   );
 }

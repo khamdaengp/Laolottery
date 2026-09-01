@@ -41,7 +41,7 @@ const TAB_CONFIGS = {
   }
 };
 
-export default function DigitAnalysisTab({ width }) {
+export default function DigitAnalysisTab({ width, topSlot }) {
   const config = TAB_CONFIGS[width];
   const {
     allAnalysisData,
@@ -76,6 +76,8 @@ export default function DigitAnalysisTab({ width }) {
         <div className="badge">{config.badge}</div>
         <h1>{config.h1}</h1>
       </div>
+
+      {topSlot}
 
       {analysisResult && (
         <div>

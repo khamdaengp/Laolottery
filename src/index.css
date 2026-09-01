@@ -1966,60 +1966,78 @@ tr:hover td {
 /* ==========================================================================
    SEGMENTED MULTI-DIGIT SWITCHER BAR (3D / 4D / 5D / 6D)
    ========================================================================== */
+.top-digit-bar-wrap,
 .bottom-digit-bar-wrap {
-  position: sticky;
-  bottom: 82px;
-  z-index: 100;
-  padding: 6px 0;
-  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .digit-segmented-bar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  gap: 6px;
   background: var(--card-bg);
   border: 1.5px solid var(--card-border-bright);
-  border-radius: var(--radius-lg);
+  border-radius: 18px;
   padding: 6px;
   width: 100%;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 0 20px rgba(74, 113, 181, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="light"] .digit-segmented-bar {
+  background: #FFFFFF !important;
+  border-color: rgba(74, 113, 181, 0.25) !important;
+  box-shadow: 0 4px 16px rgba(18, 28, 58, 0.06) !important;
 }
 
 .digit-segment-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 5px;
   background: transparent;
   border: 1px solid transparent;
   border-radius: 12px;
-  padding: 9px 6px;
-  color: #81aed5;
+  padding: 10px 4px;
+  color: var(--color-4);
   font-family: var(--lao);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   -webkit-tap-highlight-color: transparent;
 }
 
+[data-theme="light"] .digit-segment-btn {
+  color: #64748b !important;
+}
+
 .digit-segment-btn:hover:not(.active) {
   background: rgba(74, 113, 181, 0.18);
-  color: #eef5fb;
-  transform: translateY(-1px);
+  color: #FFFFFF;
+}
+
+[data-theme="light"] .digit-segment-btn:hover:not(.active) {
+  background: rgba(74, 113, 181, 0.08) !important;
+  color: #121c3a !important;
 }
 
 .digit-segment-btn.active {
   background: linear-gradient(135deg, #4a71b5 0%, #2c447d 100%);
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   border: 1px solid rgba(129, 174, 213, 0.6);
   box-shadow: 0 4px 16px rgba(74, 113, 181, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  transform: translateY(-1px);
+}
+
+[data-theme="light"] .digit-segment-btn.active {
+  background: linear-gradient(135deg, #2c447d 0%, #121c3a 100%) !important;
+  border-color: #121c3a !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(18, 28, 58, 0.25) !important;
 }
 
 .segment-icon-svg {
